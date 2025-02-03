@@ -1,0 +1,46 @@
+$mobile-width: 480px;
+$tablet-width: 767px;
+$desktop-width: 1180px;
+$laptop-width: 920px;
+
+@mixin mobileSmall {
+  @media (max-width: #{$mobile-width - 1px}) {
+    @content;
+  }
+}
+@mixin mobileLarge {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$laptop-width - 1px}) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+html,
+body {
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  @include desktop {
+    font-size: 64%;
+  }
+  @include laptop {
+    font-size: 46.25%;
+  }
+  @include tablet {
+    font-size: 40%;
+  }
+}

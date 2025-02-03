@@ -1,0 +1,62 @@
+<header class="main-header">
+  <div class="logo-container">
+    <img
+      src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/logo.png"
+      alt="logo-image"
+      class="logo"
+    />
+  </div>
+
+  <div class="navigation-mobile-container">
+    <button class="hamburger" (click)="openMenu()">
+      <img src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/hamburger.png" alt="Hamburger Icon">
+    </button>
+
+    <div class="navigation-mobile" *ngIf="hamburgerOpen">
+      <div class="close-btn-container">
+        <img src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/logo.png" alt="" class="logo">
+        <button class="close-hamburger" (click)="openMenu()">
+          <img src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/close.png" alt="">
+        </button>
+      </div>
+      <nav class="navbar">
+        <ul class="navbar__menu-item">
+          <li class="navbar__menu-item__list">
+            <a class="navbar__menu-item__link active">Dashboard</a>
+          </li>
+          <li class="navbar__menu-item__list">
+            <a class="navbar__menu-item__link" [routerLink]="''" routerLinkActive='active-link' #rla1="routerLinkActive">Events</a>
+          </li>
+          <li class="navbar__menu-item__list">
+            <a class="navbar__menu-item__link" href="#about">Help</a>
+          </li>
+          <li class="navbar__menu-item__list">
+            <a class="navbar__menu-item__link" href="#about">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <nav class="navbar">
+      <ul class="navbar__menu-item">
+        <li class="navbar__menu-item__list">
+          <a class="navbar__menu-item__link active">Dashboard</a>
+        </li>
+        <li class="navbar__menu-item__list">
+          <a class="navbar__menu-item__link" [routerLink]="''" routerLinkActive='active-link' #rla1="routerLinkActive">Events</a>
+        </li>
+        <li class="navbar__menu-item__list">
+          <a class="navbar__menu-item__link" href="#about">Help</a>
+        </li>
+        <li class="navbar__menu-item__list">
+          <a class="navbar__menu-item__link" href="#about">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+

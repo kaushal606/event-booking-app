@@ -1,0 +1,38 @@
+
+<div class="event-page-main-container">
+    <div class="search-bar-container">
+      <form action="#" class="search">
+        <input
+          type="text"
+          class="search__input"
+          placeholder="Search by event Title ..."
+          [(ngModel)]="searchText"
+          [ngModelOptions]="{standalone: true}"
+        />
+        <button class="search__button">
+          <img
+            src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/search.png"
+            alt=""
+            class="search__icon"
+          />
+        </button>
+      </form>
+    </div>
+    
+    <div class="event-page-wrapper">
+      <div class="page-heading">
+        <h2 class="page-heading__heading">Events({{(eventData | filter: searchText).length}})</h2>
+      </div>
+    
+      <div class="events-list-container"  *ngIf="(eventData | filter: searchText).length > 0; else noResults">
+        <ng-container *ngFor="let data of eventData | filter: searchText">
+            <app-card [data]="data"></app-card>
+        </ng-container> 
+      </div>
+
+      <ng-template #noResults>
+        <h2 class="not-found">No events found..!</h2>
+      </ng-template>
+    </div>
+    </div>
+    

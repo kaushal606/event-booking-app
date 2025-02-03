@@ -1,0 +1,124 @@
+@import '../../styles/responsive';
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem 2rem 12rem;
+  background: #5c524d;
+
+  @include mobileSmall {
+    padding: 2rem 3rem;
+  }
+
+  .logo-container {
+    .logo {      
+      width: 291px;
+      height: 46px;
+      @include mobileSmall {
+        width: 200px;
+        height: 32px;
+      }
+    }
+  }
+
+  .navigation-mobile-container {
+    display: none;
+    padding: 1rem;
+
+    @include mobileSmall {
+      display: block;
+    }
+
+    .hamburger {
+
+    }
+
+    .navigation-mobile {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #5C524D;
+      width: 100%;
+      height: 100vh;
+
+      .close-btn-container {
+        padding: 3rem;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+
+        .logo {
+          width: 200px;
+        height: 32px;
+        }
+      }
+
+      .navbar {
+        &__menu-item {
+          padding: 4rem;
+          margin-top: 3rem;
+  
+          &__list {
+            font-size: 2.8rem;
+            margin-bottom: 7rem;
+          }
+  
+          &__link {
+            text-align: center;
+            font-weight: 600;
+            line-height: 23px;
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.75);
+            text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+          }
+  
+          &__link:hover {
+            border-bottom: 5px solid #86EAAE;
+          }
+        }
+      }
+    }
+
+  }
+
+  
+  .navigation {
+    @include mobileSmall {
+      display: none;
+    }
+    .navbar {
+      &__menu-item {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        margin-left: 3rem;
+
+        &__list {
+          float: left;
+          margin-right: 4rem;
+          font-size: 1.8rem;
+        }
+
+        &__link {
+          display: block;
+          text-align: center;
+          font-weight: 600;
+          line-height: 23px;
+          margin-top: 15px;
+          color: rgba(255, 255, 255, 0.75);
+          text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        }
+
+        &__link:hover {
+          border-bottom: 5px solid #86EAAE;
+        }
+      }
+    }
+  }
+}
+
+.active-link {
+  border-bottom: 5px solid #86EAAE;
+}
+
+

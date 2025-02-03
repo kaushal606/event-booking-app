@@ -1,0 +1,113 @@
+<div class="event-booking-main-container" #myElem>
+    <div *ngIf="ticketsBooked" id="tickets-booked" class="tickets-booked-text">
+        <span class="text">{{eventBookingForm.value.noOfSeats}}&nbsp;Tickets booked.!</span>
+    </div>
+<div class="event-booking-container">
+    <div class="event-info-container">
+        <div class="event-title">
+            <h3 class="event-title__title">{{event.title}}</h3>
+        </div>
+        <span class="event-detail">{{event.date}}</span>
+        <span class="event-detail">Tickets Available: <b>{{event.availableTickets}}</b></span>
+    </div>
+
+    <div class="event-booking-form-wrapper">
+        <form [formGroup]="eventBookingForm" class="event-booking-form">
+            <div class="event-booking-form__field">
+                <label for="Name" class="event-booking-form__field--label">Name</label>
+                <input type="text" formControlName="name" name="Name" placeholder="First Name Last Name" class="event-booking-form__field--input">
+                <div class="error-text" *ngIf="eventBookingForm?.get('name')?.errors &&
+                                                            (eventBookingForm?.get('name')?.dirty || 
+                                                            eventBookingForm?.get('name')?.touched)">
+                                        <span *ngIf="eventBookingForm?.get('name')?.errors?.['required']">
+                                            Please enter your name
+                                        </span>
+                                        <span
+                                            *ngIf="!eventBookingForm?.get('name')?.errors?.['required'] && eventBookingForm?.get('name')?.errors?.['pattern']">
+                                            Only letters and spaces are allowed
+                                        </span>
+                                    </div>
+            </div>
+            <div class="event-booking-form__field">
+                <label for="Email" class="event-booking-form__field--label">Email</label>
+                <input type="text" formControlName="email" name="Email" placeholder="username@domain.com" class="event-booking-form__field--input">
+                <div class="error-text" *ngIf="eventBookingForm?.get('email')?.errors &&
+                                                            (eventBookingForm?.get('email')?.dirty || 
+                                                            eventBookingForm?.get('email')?.touched)">
+                                        <span *ngIf="eventBookingForm?.get('email')?.errors?.['required']">
+                                            Please enter your email
+                                        </span>
+                                        <span
+                                            *ngIf="!eventBookingForm?.get('email')?.errors?.['required'] && eventBookingForm?.get('email')?.errors?.['pattern']">
+                                            Invalid email
+                                        </span>
+                                    </div>
+            </div>
+            <div class="event-booking-form__field">
+                <label for="Mobile" class="event-booking-form__field--label">Mobile</label>
+                <input type="text" formControlName="mobile" name="Mobile" placeholder="+91 XXX XXX XXXX" class="event-booking-form__field--input">
+                <div class="error-text" *ngIf="eventBookingForm?.get('mobile')?.errors &&
+                                                            (eventBookingForm?.get('mobile')?.dirty || 
+                                                            eventBookingForm?.get('mobile')?.touched)">
+                                        <span *ngIf="eventBookingForm?.get('mobile')?.errors?.['required']">
+                                            Please enter your mobile number
+                                        </span>
+                                    </div>
+            </div>
+            <div class="event-booking-form__field">
+                <label for="seat" class="event-booking-form__field--label">No. of seats</label>
+                <input name="seat" formControlName="noOfSeats" id="" class="event-booking-form__field--input">
+                    
+                <div class="error-text" *ngIf="eventBookingForm?.get('noOfSeats')?.errors &&
+                                                            (eventBookingForm?.get('noOfSeats')?.dirty || 
+                                                            eventBookingForm?.get('noOfSeats')?.touched)">
+                                        <span *ngIf="eventBookingForm?.get('noOfSeats')?.errors?.['required']">
+                                            Please select the number of seats
+                                        </span>
+                                        <span
+                                            *ngIf="!eventBookingForm?.get('noOfSeats')?.errors?.['required'] && eventBookingForm?.get('noOfSeats')?.errors?.['max']">
+                                            Number of seats selected is more than available seats
+                                        </span>
+                                    </div>
+            </div>
+
+            <div class="event-booking-form__field">
+                <label class="event-booking-form__field--label">Attendees</label>                
+
+                <div formArrayName="attendees" *ngFor="let a of attendees?.controls; let i = index">
+                    <ng-container [formGroupName]="i">
+                        <div style="display: flex; align-items: center;">
+                            <span class="attende-no">{{i+1}}</span>
+                            <input type="text" formControlName="attendee" placeholder="First Name Last Name" class="event-booking-form__field--input">
+                        </div>
+
+                        <div class="error-text" *ngIf="a?.get('attendee')?.errors &&
+                                                            (a?.get('attendee')?.dirty || 
+                                                            a?.get('attendee')?.touched)">
+                                        <span *ngIf="a?.get('attendee')?.errors?.['required']" class="error-text" style="margin-left: 7rem;">
+                                            Please enter the name of Attendee {{i+1}}
+                                        </span>
+                                    </div>
+                        <!-- <span class="error-text" *ngIf="attendeeValidation" style="margin-left: 7rem;">Please enter the name of Attendee {{i+1}}</span> -->
+                    </ng-container>
+                </div>
+                <button *ngIf="attendees.controls.length <= 5" class="add-attendee-button" (click)="addNewAttendie()">
+                    <img src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/add.png" alt="button-logo">
+                    &nbsp; Add an Attendee
+                </button>
+            </div>
+
+            <div class="event-booking-form__button-container">
+                <div class="button">
+                    <app-button buttonColor="orange" buttonLabel="Book Tickets" [buttonDisabled]="ticketsBooked" (click)="onFormSubmit()">                
+                    </app-button>
+                </div>
+                <div class="button">
+                    <app-button buttonColor="white" buttonLabel="Cancel" [buttonDisabled]="ticketsBooked" (click)="goBack()">                
+                    </app-button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>    
+</div>

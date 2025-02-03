@@ -1,0 +1,83 @@
+@import '../../styles/responsive';
+
+.event-page-main-container {
+    .search-bar-container {
+      background: #e5e5e5;
+      padding: 2.5rem 12rem;
+
+      @include mobileSmall {
+        padding: 2.5rem 3rem;
+      }
+  
+      .search {
+        display: flex;
+        align-items: center;
+  
+        &__input {
+          font-family: inherit;
+          width: 68rem;
+          height: 50px;
+          color: #000;
+          padding-right: 20px;
+          padding-left: 20px;
+          position: static;
+          margin: 0;
+          font-size: 1.4rem;
+          transition: all 0.2s;
+          margin-right: -3.25rem;
+          background: #ffffff;
+          border: 1px solid #d5d5d5;
+          border-radius: 4px;
+  
+          &::-webkit-input-placeholder {
+            font-size: 16px;
+            color: #757575;
+          }
+        }
+      }
+    }
+  
+    .event-page-wrapper {
+      padding: 6rem 12rem 0;
+
+      @include mobileSmall {
+        padding: 4rem 3rem;
+      }
+
+      .page-heading {
+        margin-bottom: 2.5rem;
+        &__heading {
+          font-weight: 800;
+          font-size: 36px;
+          line-height: 40px;
+          text-transform: uppercase;
+          color: #212121;
+
+          @include mobileSmall {
+            font-size: 4.6rem;
+          }
+        }
+      }
+  
+      .events-list-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 3rem;
+        grid-row-gap: 3rem;
+
+        @include mobileSmall {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .not-found {
+        text-align: center;
+        font-size: xxx-large;
+        font-weight: bold;
+
+        @include mobileSmall {
+          font-size: x-large;
+        }
+      }
+    }
+  }

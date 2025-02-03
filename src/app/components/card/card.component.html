@@ -1,0 +1,28 @@
+<div class="card-container">
+    <div class="image-container">
+        <img src="{{data?.image}}" alt="event-image" class="image-container__image">
+    </div>
+    <div class="info-container">
+        <div class="info-wrapper">
+            <div class="card-label">
+                <span class="card-label__label">{{data?.title}}</span>
+            </div>
+            <div class="card-details">
+                <p class="card-details__detail">{{data?.date}}</p>
+                <p class="card-details__detail">Tickets Available: <b>{{data?.availableTickets}}</b></p>
+            </div>
+        </div>
+
+        <div class="card-button">
+            <app-button class="button-desktop" buttonColor="white" [buttonLabel]="data?.availableTickets == 0 ? 'Sold Out' : 'Book Event'" [buttonDisabled]="data?.availableTickets == 0 ? true : false" (click)="navigateToBooking()">                
+                <img *ngIf="data?.availableTickets > 0" src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/book.png" alt="button icon" class="card-button__button--icon"> 
+                <img *ngIf="data?.availableTickets == 0" src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/sold-out.png" alt="button icon">
+            </app-button>
+
+            <button class="button-mobile" (click)="navigateToBooking()">                               
+                <img *ngIf="data?.availableTickets > 0" src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/book.png" alt="button icon" width="22"> 
+                <img *ngIf="data?.availableTickets == 0" src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/sold-out.png" alt="button icon" width="22">
+            </button>
+        </div>
+    </div>
+</div>

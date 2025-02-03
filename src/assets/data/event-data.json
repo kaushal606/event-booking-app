@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "image": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-1.png",
+    "title": "Understanding color theory: the color wheel and findi...",
+    "date": "20 Sept, 2022",
+    "availableTickets": 0
+  },
+  {
+    "id": 2,
+    "image": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-2.png",
+    "title": "RGD Design Thinkers",
+    "date": "20 Sept, 2022",
+    "availableTickets": 11
+  },
+  {
+    "id": 3,
+    "image": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-3.png",
+    "title": "What Design Can Do",
+    "date": "20 Sept, 2022",
+    "availableTickets": 206
+  },
+  {
+    "id": 4,
+    "image": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-4.png",
+    "title": "Perth UX Camp",
+    "date": "20 Sept, 2022",
+    "availableTickets": 47
+  },
+  {
+    "id": 5,
+    "image": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-5.png",
+    "title": "Sofia Design",
+    "date": "20 Sept, 2022",
+    "availableTickets": 66
+  },
+  {
+    "id": 6,
+    "image": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-6.png",
+    "title": "Design Indaba Conference",
+    "date": "20 Sept, 2022",
+    "availableTickets": 84
+  },
+  {
+    "id": 7,
+    "image": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-7.png",
+    "title": "TYPO Berlin",
+    "date": "20 Sept, 2022",
+    "availableTickets": 4
+  },
+  {
+    "id": 8,
+    "image": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-8.png",
+    "title": "AIGA Design Conference",
+    "date": "20 Sept, 2022",
+    "availableTickets": 16
+  }
+]
